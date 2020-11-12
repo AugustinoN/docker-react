@@ -1,10 +1,5 @@
 #sudo: required
 
-matrix:
-  include:
-    - dist: bionic
-    - dist: xenial
-
 services:
  - docker
 
@@ -12,4 +7,4 @@ before_install:
  - docker build -t 20200321/docker-react -f Dockerfile.dev .
 
 script:
- - docker run 20200321/docker-react npm run test -- --coverage
+ - docker run -e CI=true 20200321/docker-react npm run test
