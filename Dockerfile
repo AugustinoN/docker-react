@@ -1,4 +1,5 @@
 # Building Phase
+# Add to push code to github dev branch
 FROM node:alpine 
 WORKDIR '/app'
 COPY package*.json ./
